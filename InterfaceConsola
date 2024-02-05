@@ -12,7 +12,7 @@ public class InterfaceConsola {
         opc= 'C';
         presentarJuego();
         game= new SieteYMedia();
-        jugar();
+        estructura();
         System.out.println("ADIOS"); 
 
         }        
@@ -22,7 +22,7 @@ public class InterfaceConsola {
      con el usuario(es decir, mostrar los resultados adecuados)luego la clase interface se encarga de las impresiones y los println 
      */
 
-    void jugar() {  
+    void estructura() {  
         game.comprobar();
         while (game.comprobar()==false && opc == 'C') {
                 
