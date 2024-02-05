@@ -6,6 +6,7 @@ public class SieteYMedia {
     Baraja baraja;
     Carta[] cartasJugador;
     Carta[] cartasBanca;
+    double valor;
     public SieteYMedia() {
         baraja = new Baraja();
         baraja.barajar();
@@ -26,10 +27,11 @@ public class SieteYMedia {
              Carta c = baraja.darCartas(1)[0];
             
             insertarCartaEnArray(cartasJugador, c);
-            
+            valor = valorCartas(cartasJugador);
             
             }
     
+     
    
     void turnoBanca() {
         
