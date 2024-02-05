@@ -14,7 +14,9 @@ public class SieteYMedia {
         cartasBanca = new Carta[15];
     
     }
-   
+  
+    
+
     /*se simplifican los turnos para facilitar los println en InterfaceConsola,
      de modo que es esa clase la que se encarga de realizar las órdenes a 
      SieteyMedia e imprimir los mensajes necesarios en función de estos resultados
@@ -38,8 +40,8 @@ public class SieteYMedia {
         
     }
     
-    /*se usa para interactuar con InterfaceConsola, 
-    comprueba que el jugador no se pasa y devuelve true o false*/
+    /*se usan para interactuar con InterfaceConsola, 
+    comprueba que el jugador o la banca no se pasan y devuelve true o false*/
     boolean comprobar(){
         double valorCartasJugador = valorCartas(cartasJugador);
         if (valorCartasJugador > 7.5) {
@@ -48,7 +50,18 @@ public class SieteYMedia {
             return false;
         }
     }
-     
+    
+    boolean comprobarB(){
+        double valorCartasBanca = valorCartas(cartasBanca);
+        if (valorCartasBanca > 7.5) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+    
+
     /*calcula el valor de las cartas */
     double valorCartas(Carta[] cartas) {
         double total = 0.0;
