@@ -23,35 +23,33 @@ public class InterfaceConsola {
      */
 
     void jugar() {  
-        
-        while (game.valorCartas(game.cartasJugador) < 7.5 && opc == 'C') {
+        game.comprobar();
+        while (game.comprobar()==false && opc == 'C') {
                 
                 System.out.println("Éstas son tus cartas jugador:");
                 game.turnoJugador();
                 mostrarCartas(game.cartasJugador);
                 System.out.println("\n\tValor de cartas: " + game.valor);
-                if (game.valor < 7.5) {
                 System.out.println("\n¿Pides [C]arta o te [P]lantas?");
                 opc = sc.next().trim().toUpperCase().charAt(0);
+                game.comprobar();
+                
                 }
 
-
-        }
         if (game.comprobar()){
                 System.out.println("Jugador, te has pasado en tu jugada anterior, gana la banca");
-        } else {
+        }else{  
                 System.out.println("\n\nTurno de banca ...");
+                game.turnoBanca();
 
-        game.turnoBanca();
-
-        System.out.println("Éstas son mis cartas:");
-        mostrarCartas(game.cartasBanca);
-        System.out.println("\nValor de  mis cartas(banca): " + game.valorCartas(game.cartasBanca));
-        if (game.valorCartas(game.cartasBanca) > 7.5) {
-                System.out.println("me pasé, ganas tú,jugador");
-        } else {
-                System.out.println("Gana la banca");
-        }
+                System.out.println("Éstas son mis cartas:");
+                mostrarCartas(game.cartasBanca);
+                System.out.println("\nValor de  mis cartas(banca): " + game.valorCartas(game.cartasBanca));
+                if (game.comprobarB()) {
+                        System.out.println("me pasé, ganas tú,jugador");
+                } else {
+                        System.out.println("Gana la banca");
+                }
         }
 
     }
