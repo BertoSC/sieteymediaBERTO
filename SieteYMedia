@@ -14,11 +14,7 @@ public class SieteYMedia {
         cartasBanca = new Carta[15];
     
     }
-    /* getter para permitir el acceso a las cartas desde InterfaceConsola */ 
-    public Carta[] getCartasJugador() {
-        return cartasJugador;
-    } 
-
+   
     /*se simplifican los turnos para facilitar los println en InterfaceConsola,
      de modo que es esa clase la que se encarga de realizar las órdenes a 
      SieteyMedia e imprimir los mensajes necesarios en función de estos resultados
